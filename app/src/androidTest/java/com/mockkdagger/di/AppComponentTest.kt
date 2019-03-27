@@ -6,12 +6,12 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    RepositoryModule::class
+    RepositoryModuleTest::class
 ])
-interface TestAppComponent: AppComponent {
+interface AppComponentTest: AppComponent {
     @Component.Builder
     interface Builder {
-        fun build(): TestAppComponent
+        fun build(): AppComponentTest
     }
 
     fun inject(test: MainActivityTest)

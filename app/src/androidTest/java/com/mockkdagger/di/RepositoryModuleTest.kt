@@ -7,7 +7,7 @@ import io.mockk.mockk
 import javax.inject.Singleton
 
 @Module
-object RepositoryModule {
+object RepositoryModuleTest {
     @Provides
     @JvmStatic
     @Singleton

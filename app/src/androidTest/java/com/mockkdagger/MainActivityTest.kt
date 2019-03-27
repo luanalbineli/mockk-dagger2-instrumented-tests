@@ -3,27 +3,21 @@ package com.mockkdagger
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
-import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
+import com.mockkdagger.di.DaggerAppComponentTest
 import com.mockkdagger.di.DaggerComponentProvider
-import com.mockkdagger.di.DaggerTestAppComponent
 import com.mockkdagger.repository.MainRepository
 import io.mockk.every
-
-import org.junit.Test
-import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
 import javax.inject.Inject
 
 /**
@@ -46,7 +40,7 @@ class MainActivityTest {
     private val mApp = mContext.applicationContext as DaggerComponentProvider
 
     private val testAppComponent by lazy {
-        DaggerTestAppComponent.builder()
+        DaggerAppComponentTest.builder()
             .build()
     }
 
